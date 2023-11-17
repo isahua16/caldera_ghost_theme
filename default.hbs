@@ -1,75 +1,84 @@
-<!DOCTYPE html>
 <html lang="{{@site.locale}}">
-<head>
+    <head>
 
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="{{asset "built/index.css"}}" />
-    <script src="{{asset "built/index.js"}}" defer></script>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="{{asset 'built/index.css'}}" />
+        <script src="{{asset 'built/index.js'}}" defer></script>
 
-    <title>{{meta_title}}</title>
+        <title>{{meta_title}}</title>
 
-    {{ghost_head}}
-    {{!-- Outputs important meta data and settings, should always be in <head> --}}
+        {{ghost_head}}
+        {{! Outputs important meta data and settings, should always be in <head> }}
 
-</head>
-<body class="{{body_class}}">
-<div class="gh-viewport">
-
-<header id="gh-head" class="gh-head">
-    <nav class="gh-head-inner gh-container">
-
-        <div class="gh-head-brand">
+    </head>
+    <body>
+        <header id="main_header">
             <a href="{{@site.url}}">
-                <img  src="/assets/images/logo.webp" alt="{{@site.title}}" />
+                <img
+                    id="main_logo"
+                    src="/assets/images/logo.webp"
+                    alt="{{@site.title}}"
+                />
             </a>
-            <a class="gh-burger" role="button" aria-label="menu">
-                <div class="gh-burger-box">
-                    <div class="gh-burger-inner"></div>
-                </div>
-            </a>
-        </div>
-        <div class="gh-head-menu">
-            {{navigation}}
-        </div>
-        <div class="gh-head-actions">
-            <div class="gh-head-actions-list">
-                {{search}}
-                {{#if @site.members_enabled}}
-                    {{^if @member}}
-                    <a class="gh-button" href="{{@site.signup_url}}">Subscribe</a>
-                    {{else}}
-                    <a class="gh-button" href="#/portal/account">Account</a>
-                    {{/if}}
-                {{/if}}
+            <img
+                id="menu_icon"
+                src="{{asset '/images/menu.svg'}}"
+                alt="Menu Icon"
+            />
+        </header>
+        <nav id="mobile_nav">
+            <a class="link_text" href="">Home</a>
+            <a class="link_text" href="">Game</a>
+            <a class="link_text" href="">Blog</a>
+            <a class="link_text" href="">Team</a>
+            <a class="link_text" href="">Contact</a>
+        </nav>
+
+        <main>
+
+            {{{body}}}
+            {{! All content gets inserted here, index.hbs, post.hbs, etc }}
+
+        </main>
+
+        <footer id="main_footer">
+            <div id="footer_nav">
+                <img
+                    id="arrow_icon"
+                    src="{{asset 'images/chevron-up.svg'}}"
+                    alt=""
+                />
+                <a class="link_text" href="">Get to know us</a>
+                <a class="link_text" href="">Become a playtester</a>
+                <a class="link_text" href="">Wishlist on Steam</a>
             </div>
-        </div>
-    </nav>
-</header>
+            <div id="footer_socials">
+                <img
+                    class="social_icon"
+                    src="{{asset 'images/tiktok.png'}}"
+                    alt=""
+                />
+                <img
+                    class="social_icon"
+                    src="{{asset 'images/twitter.png'}}"
+                    alt=""
+                />
+                <img
+                    class="social_icon"
+                    src="{{asset 'images/instagram.png'}}"
+                    alt=""
+                />
+            </div>
+            <div id="footer_disclaimer">
+                <p>&copy 2023 Caldera Interactive Ltd.</p>
+                <a class="link_text" href="">Privacy</a>
+            </div>
+        </footer>
 
-<main class="gh-main">
+        {{! <foot> }}
+        {{ghost_foot}}
+        {{! Outputs important scripts - should always be included before closing body tag }}
 
-    {{{body}}}
-    {{!-- All content gets inserted here, index.hbs, post.hbs, etc --}}
-
-</main>
-
-<footer class="gh-foot">
-    <div class="gh-container">
-        <div class="gh-foot-menu">
-            {{navigation type="secondary"}}
-        </div>
-        <div class="gh-foot-meta">
-            Published with <a href="https://ghost.org" target="_blank" rel="noopener">Ghost</a>
-        </div>
-    </div>
-</footer>
-
-</div>
-
-{{!-- <foot> --}}
-{{ghost_foot}}
-{{!-- Outputs important scripts - should always be included before closing body tag --}}
-
-</body>
+    </body>
 </html>

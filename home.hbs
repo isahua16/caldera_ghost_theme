@@ -1,0 +1,103 @@
+{{!< default}}
+
+<section id="hero_section">
+    <img id="hero_image" src="{{asset "/images/hero.jpg"}}" alt="Concept art for the game The Rabbit Haul">
+  </section>
+<section id="welcome_section">
+    <img id="team_photo" src="{{asset "images/team.webp"}}" alt="Photo of the Caldera Interactive team">
+    <div id="welcome_text">
+      <h2>Hello, it's nice to meet you!</h2>
+      <p>We are Caldera Interactive, an indie game studio that has ethical, sustainable, and non-exploitative game
+        development at
+        its core. Support us by signing up to our upcoming playtests!</p>
+      <div id="subscribe_component">
+        <input class="text_input" type="text" placeholder="Email">
+        <button id="subscribe_btn">Sign up</button>
+      </div>
+    </div>
+  </section>
+  <section id="game_section">
+    <div class="section_container">
+
+      <div id="game_section_title">
+        <h2>The Rabbit Haul</h2>
+        <p>Find out about our game</p>
+      </div>
+      <article id="game_card">
+        <img id="concept_image" src="{{asset "images/concept.jpg"}}" alt="Concept art for the game The Rabbit Haul">
+        <p id="game_text">The Rabbit Haul is a single-player tower defence farming game with action-roguelite elements
+          where you play as
+          a
+          friendly rabbit gardener protecting its haul of fruits and veggies from waves of hungry raccoons known as the
+          Trash
+          Panda Posse. With an array of unique weapons, upgrade paths, powerful towers and crops to unlock, the game
+          offers
+          countless play styles to master.</p>
+        <button id="wishlist_btn">
+          <a id="wishlist_btn_text" target="_blank" href="https://store.steampowered.com/app/2514330/The_Rabbit_Haul/">
+            Wishlist on Steam </a>
+          <svg id="wishlist_btn_image" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+            style="fill: #b8dc89;">
+            <path d="M8.21 17.32 7 16.8a2.13 2.13 0 1 0 1.17-2.93l1.28.53a1.58 1.58 0 0 1-1.22 2.92z"></path>
+            <path
+              d="M12 2a10 10 0 0 0-10 9.34l5.38 2.21a2.31 2.31 0 0 1 .47-.24A2.62 2.62 0 0 1 9 13.1l2.44-3.56a3.8 3.8 0 1 1 3.8 3.8h-.08l-3.51 2.5a2.77 2.77 0 0 1-5.47.68l-3.77-1.6A10 10 0 1 0 12 2z">
+            </path>
+            <path
+              d="M17.79 9.5a2.53 2.53 0 1 0-2.53 2.5 2.54 2.54 0 0 0 2.53-2.5zm-4.42 0a1.9 1.9 0 1 1 1.9 1.91 1.9 1.9 0 0 1-1.9-1.92z">
+            </path>
+          </svg>
+        </button>
+      </article>
+    </div>
+    </div>
+  </section>
+
+  <section id="blog_section">
+    <div class="section_container">
+      <div id="blog_section_title">
+        <h2>Blog</h2>
+        <p>Read more about our journey</p>
+      </div>
+      <div id="recent_posts_component">
+        {{#get "posts" limit="2"}}
+          {{#foreach posts}}
+          <article class="post_card">
+            <a class="link_post" href="{{url}}">
+              <img class="post_card_image" src="{{feature_image}}" alt="">
+            </a>
+              <h3 class="post_card_title">{{title}}</h3>            
+              <span class="post_card_desc">
+              <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time> 
+              <span class="bull">&bull;</span> {{reading_time}}
+              </span>
+              <p class="post_card_desc">{{excerpt characters="100"}}</p>
+              <a class="post_card_link" href="{{url}}">Read more</a>
+          </article>
+          {{/foreach}}  
+        {{/get}}
+        <button id="blog_btn">All posts</button>
+      </div>
+    </div>
+  </section>
+  <section id="team_section">
+    <div class="section_container">
+      <h2 id="team_section_title">Team</h2>
+      <div id="team_component">
+        <article class="team_card">
+          <img class="team_card_image" src="{{asset "images/isael.png"}}" alt="">
+          <h3 class="team_card_name">Isael Huard</h3>
+          <p class="team_card_desc">Producer, Sound Designer, Co-Founder</p>
+        </article>
+        <article class="team_card">
+          <img class="team_card_image" src="{{asset "images/mickael.png"}}" alt="">
+          <h3 class="team_card_name">Mickael Zerihoun</h3>
+          <p class="team_card_desc">Programmer, Co-Founder</p>
+        </article>
+        <article class="team_card">
+          <img class="team_card_image" src="{{asset "images/titus.png"}}" alt="">
+          <h3 class="team_card_name">Titus Lo</h3>
+          <p class="team_card_desc">Designer, Artist, Co-Founder</p>
+        </article>
+      </div>
+    </div>
+  </section>
