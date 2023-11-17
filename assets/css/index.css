@@ -1,13 +1,4 @@
 
-
-@media (max-width: 700px) {
-    .gh-author-meta {
-        font-size: 1.6rem;
-    }
-}
-
-/* NEW STYLES */
-
 * {
     padding: 0;
     margin: 0;
@@ -45,10 +36,6 @@ p {
     text-decoration: none;
     font-weight: 400;
     letter-spacing: 0.2px;
-}
-
-.link_post {
-    
 }
 
 /* HEADER */
@@ -231,9 +218,14 @@ p {
 }
 
 .post_card_link {
-    width: 90%;
+    font-size: 1.08rem;
+    width: auto;
     color:#00b8f1;
-    
+    text-decoration: none;
+    justify-self: start;
+    margin-left: 20px;
+    border-bottom: 1px solid #00b8f1;
+    line-height: 30px;
 }
 
 #blog_btn {
@@ -367,4 +359,10 @@ p {
 
 #ghost-portal-root {
     display: none;
+}
+
+@media (max-width: 700px) {
+    .gh-author-meta {
+        font-size: 1.6rem;
+    }
 }
