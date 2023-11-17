@@ -1,6 +1,5 @@
 <html lang="{{@site.locale}}">
     <head>
-
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="stylesheet" href="{{asset 'built/index.css'}}" />
@@ -23,7 +22,7 @@
             <a href="{{@site.url}}">
                 <img
                     id="main_logo"
-                    src="/assets/images/logo.webp"
+                    src="{{asset '/images/logo.webp'}}"
                     alt="{{@site.title}}"
                 />
             </a>
@@ -33,12 +32,15 @@
                 alt="Menu Icon"
             />
         </header>
-        <nav id="mobile_nav">
-            <a class="link_text" href="">Home</a>
-            <a class="link_text" href="">Game</a>
-            <a class="link_text" href="">Blog</a>
-            <a class="link_text" href="">Team</a>
-            <a class="link_text" href="">Contact</a>
+        <nav id="mobile_nav" class="closed_menu">
+            <a class="link_text anchor_link" href="{{@site.url}}">Home</a>
+            <a class="link_text anchor_link" href="{{@site.url}}#game">Game</a>
+            <a class="link_text" href="{{@site.url}}/blog">Blog</a>
+            <a class="link_text anchor_link" href="{{@site.url}}#team">Team</a>
+            <a
+                class="link_text anchor_link"
+                href="{{@site.url}}/#contact"
+            >Contact</a>
         </nav>
 
         <main>
@@ -55,9 +57,14 @@
                     src="{{asset 'images/chevron-up.svg'}}"
                     alt=""
                 />
-                <a class="link_text" href="">Get to know us</a>
+
+                <a class="link_text" href="{{@site.url}}/blog">Get to know us</a>
                 <a class="link_text" href="">Become a playtester</a>
-                <a class="link_text" href="">Wishlist on Steam</a>
+                <a
+                    class="link_text"
+                    target="_blank"
+                    href="https://store.steampowered.com/app/2514330/The_Rabbit_Haul/"
+                >Wishlist on Steam</a>
             </div>
             <div id="footer_socials">
                 <img
